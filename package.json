@@ -19,6 +19,7 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.7",
     "fastify": "^4.0.0",
+    "fastify-cors": "^6.1.0",
     "googleapis": "^146.0.0",
     "moment-timezone": "^0.5.47"
   },
