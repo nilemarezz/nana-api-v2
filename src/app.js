@@ -1,14 +1,12 @@
 import Fastify from "fastify";
 import routes from "./routes/index.js";
 import { createGoogleSheetConnection } from "./service/googlesheet.js";
-import fastifyCors from "fastify-cors";
+import cors from "@fastify/cors";
 
 const fastify = Fastify({ logger: true });
 
-// Register CORS plugin
-fastify.register(fastifyCors, {
-  origin: "*", // Allow all origins
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // Allow these HTTP methods
+await fastify.register(cors, {
+  // put your options here
 });
 
 fastify.register(routes);
