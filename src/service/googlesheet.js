@@ -100,7 +100,7 @@ export async function insertNewRecord(sheets, title, newRows) {
   const response = await sheets.spreadsheets.values.append({
     spreadsheetId: NANA_SHEET,
     range: title,
-    valueInputOption: "RAW",
+    valueInputOption: "USER_ENTERED",
     resource: {
       values: newRows,
     },
