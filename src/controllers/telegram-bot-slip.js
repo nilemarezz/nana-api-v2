@@ -51,6 +51,7 @@ export async function SlipCheckController(request, reply) {
 
         const checkSlipData = await checkSlip(qrCodeData);
         await checkSlipResponse(checkSlipData, chatId, messageId);
+        reply.send({ status: "ok" });
       } catch (e) {
         const savedFilePath = await downloadTelegramFile(fileId);
         console.log(`File saved at: ${savedFilePath}`);
@@ -61,8 +62,6 @@ export async function SlipCheckController(request, reply) {
         reply.send({ status: "ok" });
       }
     }
-
-    reply.send({ status: "ok" });
   }
   // Function to get the file URL from Telegram API
   async function getFileUrl(fileId) {
