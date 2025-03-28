@@ -1,4 +1,5 @@
 import { SearchController, FormAdminController } from "../controllers/index.js";
+import { SlipCheckController } from "../controllers/telegram-bot-slip.js";
 import { verifyToken } from "../middleware/verify.js";
 
 export default async function routes(fastify, options) {
@@ -9,4 +10,6 @@ export default async function routes(fastify, options) {
     { preHandler: [verifyToken] },
     FormAdminController
   );
+
+  fastify.post("/webhook", SlipCheckController);
 }
