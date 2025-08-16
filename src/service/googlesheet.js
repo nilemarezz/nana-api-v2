@@ -78,7 +78,7 @@ const mappedResult = (row, i) => {
     paid_date: row[9] || null, // จ่ายที่เหลือภายในวันที่
     release_date: row[10] || null, // เว็บจัดส่งภายในวันที่
     shipping_method: row[11] || null, // ขนส่ง
-    product_status: row[13] || null, // กดสั่งซื้อ
+    product_status: row[13] || null, // สถานะในร้าน
     tracking_no: row[16] || null, // เลข Tracking
     image:
       row[18] == null || row[18] == ""
