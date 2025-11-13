@@ -79,7 +79,7 @@ const mappedResult = (row, i) => {
     release_date: row[10] || null, // เว็บจัดส่งภายในวันที่
     shipping_method: row[11] || null, // ขนส่ง
     product_status: row[13] || null, // สถานะในร้าน
-    tracking_no: row[16] || null, // เลข Tracking
+    tracking_no: (row[16] || "").replace(/\s+/g, "") || null, // เลข Tracking
     image:
       row[18] == null || row[18] == ""
         ? null
